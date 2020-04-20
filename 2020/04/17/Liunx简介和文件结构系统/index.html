@@ -85,11 +85,13 @@
 <meta property="og:url" content="https://customize229.github.io/Customize.github.io/2020/04/17/Liunx%E7%AE%80%E4%BB%8B%E5%92%8C%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="横川马鹿">
 <meta property="og:description" content="Liunx的发展史Liunx系统的前身是Unix系统:">
+<meta property="og:image" content="c:%5CUsers%5CCustomize%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200218145533418.png">
 <meta property="article:published_time" content="2020-04-17T01:30:50.000Z">
-<meta property="article:modified_time" content="2020-04-17T02:13:45.811Z">
+<meta property="article:modified_time" content="2020-04-19T04:30:05.159Z">
 <meta property="article:author" content="Wu Hao">
 <meta property="article:tag" content="Liunx基础">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5CCustomize%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200218145533418.png">
 
 
 
@@ -316,7 +318,27 @@
 <li>uname -r(只查看内核信息)</li>
 </ul>
 <h5 id="内核版本说明"><a href="#内核版本说明" class="headerlink" title="内核版本说明:"></a>内核版本说明:</h5><p>3.10.0-514.26.2.el7.x86_64</p>
-<p>(3)：内核主版本号 </p>
+<p>以.分隔</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">(3)：内核主版本号 </span><br><span class="line"></span><br><span class="line">(10)：内核次版本号。偶数表示稳定版本；奇数表示开发中版本</span><br><span class="line"></span><br><span class="line">(0)：内核修订版本号，表示修改次数</span><br><span class="line"></span><br><span class="line">(514)：版本微调次数</span><br><span class="line"></span><br><span class="line">(26.2)：其它信息</span><br><span class="line"></span><br><span class="line">(el7)：表示Redhat7</span><br><span class="line"></span><br><span class="line">(x86_64)：表示64位操作系统，如果没有_64就是32位操作系统</span><br></pre></td></tr></table></figure>
+
+<p>稳定版(在开发版推出后的Debug版本)</p>
+<p>开发板(内置最新设置的新版本，不稳定可能会有bug)</p>
+<p>所有Liunx系统公司生产的Liunx系统方向分为两类：命令行和图形化</p>
+<h3 id="层次化结构"><a href="#层次化结构" class="headerlink" title="层次化结构"></a>层次化结构</h3><p>所有Liunx、Unix系统都基于 FHS ，文件系统层次化标准</p>
+<p><img src="C:%5CUsers%5CCustomize%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200218145533418.png" alt="image-20200218145533418"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;：是Liunx文件系统根目录</span><br><span class="line"></span><br><span class="line">&#x2F;boot：系统启动所需要的文件目录    (不能随意删除，会影响到系统启动)</span><br><span class="line"></span><br><span class="line">&#x2F;bin：存放用户命令  例如：&#x2F;bin&#x2F;ls    (内部命令、内置文件)</span><br><span class="line"></span><br><span class="line">&#x2F;dev：设备文件目录</span><br><span class="line"></span><br><span class="line">&#x2F;etc：系统配置文件目录    (程序配置文件也在其中)</span><br><span class="line"></span><br><span class="line">&#x2F;home：普通用户家目录    (存放用户产生文件)</span><br><span class="line"></span><br><span class="line">&#x2F;root：系统管理员root家目录</span><br><span class="line"></span><br><span class="line">&#x2F;run：进程运行数据存放目录    (同&#x2F;boot，不能随意删除)</span><br><span class="line"></span><br><span class="line">&#x2F;sbin：存放系统命令；管理员专用  例如：&#x2F;sbin&#x2F;shutdown    (区分root用户与普通用户)</span><br><span class="line"></span><br><span class="line">&#x2F;tmp：临时文件目录；任何人都可访问，存放周期10天</span><br><span class="line"></span><br><span class="line">&#x2F;usr：常规目录；存放程序文件，库文件，共享文件，各种文档等</span><br><span class="line"></span><br><span class="line">         &#x2F;usr&#x2F;bin：存放后期安装的程序的运行脚本    (外部命令、外置文件)</span><br><span class="line"></span><br><span class="line">         &#x2F;usr&#x2F;local：第三方安装目录</span><br><span class="line"></span><br><span class="line">         &#x2F;usr&#x2F;sbin：类似&#x2F;sbin；存放管理员使用命令</span><br><span class="line"></span><br><span class="line">         &#x2F;usr&#x2F;tmp：被抛弃临时文件目录</span><br><span class="line"></span><br><span class="line">&#x2F;var：动态数据文件目录；日志文件log，数据库，缓存目录等    (数据随时变化)</span><br><span class="line"></span><br><span class="line">         &#x2F;var&#x2F;tmp：临时文件目录；存放周期更长    (与&#x2F;usr&#x2F;tmp同一文件夹)</span><br></pre></td></tr></table></figure>
+
+<h5 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h5><p>直指目标的路径</p>
+<h5 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h5><p>基础与一个文件，其它文件与这一文件相处的偏差</p>
+<h5 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h5><ol>
+<li>长度不超过255个字符</li>
+<li>不能使用/当文件名</li>
+<li>严格区分大小写</li>
+<li>以点号开头的文件为隐藏文件</li>
+</ol>
+<p>.表示当前目录</p>
+<p>..表示当前目录的上一级</p>
+<p>Liunx可以使用特殊字符作为文件名</p>
 
       
     </div>
@@ -343,6 +365,22 @@
       
       
     
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+    
+          <span class="post-nav-divider"></span>
+    
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Customize.github.io/2020/04/20/Liunx%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" rel="prev" title="Liunx基础（一）">
+                Liunx基础（一） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
     
       
@@ -416,7 +454,7 @@
               
                 <a href="/Customize.github.io/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -462,7 +500,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Liunx的发展史"><span class="nav-number">1.</span> <span class="nav-text">Liunx的发展史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内核版本"><span class="nav-number">2.</span> <span class="nav-text">内核版本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看内核版本"><span class="nav-number">2.0.1.</span> <span class="nav-text">查看内核版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内核版本说明"><span class="nav-number">2.0.2.</span> <span class="nav-text">内核版本说明:</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Liunx的发展史"><span class="nav-number">1.</span> <span class="nav-text">Liunx的发展史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内核版本"><span class="nav-number">2.</span> <span class="nav-text">内核版本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看内核版本"><span class="nav-number">2.0.1.</span> <span class="nav-text">查看内核版本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#内核版本说明"><span class="nav-number">2.0.2.</span> <span class="nav-text">内核版本说明:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层次化结构"><span class="nav-number">3.</span> <span class="nav-text">层次化结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#绝对路径"><span class="nav-number">3.0.1.</span> <span class="nav-text">绝对路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#相对路径"><span class="nav-number">3.0.2.</span> <span class="nav-text">相对路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#命名规则"><span class="nav-number">3.0.3.</span> <span class="nav-text">命名规则</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
