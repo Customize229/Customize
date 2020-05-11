@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linux," />
+  <meta name="keywords" content="Linux基础," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="人懒 不定时填充Linux笔记">
+<meta name="description" content="主机管理命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux基础（三）">
 <meta property="og:url" content="https://customize229.github.io/Customize.github.io/2020/04/28/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%89%EF%BC%89/index.html">
 <meta property="og:site_name" content="横川马鹿">
-<meta property="og:description" content="人懒 不定时填充Linux笔记">
+<meta property="og:description" content="主机管理命令">
 <meta property="article:published_time" content="2020-04-28T13:01:13.000Z">
-<meta property="article:modified_time" content="2020-05-10T13:18:04.672Z">
+<meta property="article:modified_time" content="2020-05-11T12:12:15.505Z">
 <meta property="article:author" content="WH">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Linux基础">
 <meta name="twitter:card" content="summary">
 
 
@@ -318,6 +318,28 @@
           </span>
     
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Customize.github.io/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+    
+                
+                
+              
+            </span>
+          
     
           
             
@@ -339,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  784
                 </span>
               
     
@@ -364,7 +386,13 @@
       
     
       
-        
+        <h3 id="主机管理命令"><a href="#主机管理命令" class="headerlink" title="主机管理命令"></a>主机管理命令</h3><a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;主机名管理</span><br><span class="line">    hostname       &#x2F;&#x2F;查看或临时修改主机名，重开终端生效，重启失效</span><br><span class="line">    hostnamectl    &#x2F;&#x2F;查看或永久修改主机名，重开终端生效，永久有效</span><br><span class="line">hostnamectl set-hostname &quot;主机名&quot;    &#x2F;&#x2F;永久修改主机名</span><br><span class="line">命令生效需断开再重新连接</span><br><span class="line">修改&#x2F;etc&#x2F;hostname里的配置文件同样可以实现永久修改主机名</span><br><span class="line"></span><br><span class="line">    reboot         &#x2F;&#x2F;重启系统</span><br><span class="line">    shutdown now   &#x2F;&#x2F;马上关机</span><br><span class="line">    power off      &#x2F;&#x2F;强制关机（慎用）</span><br><span class="line">    </span><br><span class="line">&#x2F;&#x2F;用户切换</span><br><span class="line">    useradd    &#x2F;&#x2F;用户名</span><br><span class="line">    passwd     &#x2F;&#x2F;密码</span><br><span class="line">    </span><br><span class="line">    su - &quot;用户名&quot;    &#x2F;&#x2F;切换用户</span><br><span class="line">    exit            &#x2F;&#x2F;退出当前登录</span><br><span class="line">    </span><br><span class="line">&#x2F;&#x2F;其他</span><br><span class="line">    time        &#x2F;&#x2F;显示命令的执行时间，例如time ls &#x2F;etc</span><br><span class="line">    clear       &#x2F;&#x2F;清屏  快捷键ctrl+L</span><br><span class="line">    whoami      &#x2F;&#x2F;显示当前登录用户</span><br><span class="line">    w           &#x2F;&#x2F;显示当前在线用户并显示其在允许的命令</span><br><span class="line">    who         &#x2F;&#x2F;查看当前在线用户</span><br><span class="line">    which       &#x2F;&#x2F;显示指定命令的绝对路径</span><br><span class="line">    date        &#x2F;&#x2F;显示或设置日期与时间</span><br><span class="line">        &#x2F;&#x2F;不带参数的date用于显示当前系统日期与时间</span><br><span class="line">        -s    &#x2F;&#x2F;以字符串方式设置时间</span><br><span class="line">        &#x2F;&#x2F;格式化输出时间：+  符号用英文</span><br><span class="line">            %Y    &#x2F;&#x2F;年</span><br><span class="line">            %m    &#x2F;&#x2F;月</span><br><span class="line">            %d    &#x2F;&#x2F;日</span><br><span class="line">            %H    &#x2F;&#x2F;时</span><br><span class="line">            %M    &#x2F;&#x2F;分</span><br><span class="line">            %S    &#x2F;&#x2F;秒</span><br><span class="line">            </span><br><span class="line">    cal         &#x2F;&#x2F;打印日历</span><br><span class="line">    </span><br><span class="line">    bc    &#x2F;&#x2F;linux中的计算器</span><br><span class="line">        -l    &#x2F;&#x2F;使用标准数学库</span><br><span class="line">        echo&#39;scale&#x3D;2;5&#x2F;2&#39; | bc -l</span><br><span class="line">    传参数的计算方式  scale&#x3D;2标识显示2位小数</span><br><span class="line">安装bc命令  yum install -y bc</span><br><span class="line"></span><br><span class="line">    ldd    &#x2F;&#x2F;查看指定程序有哪些依赖库文件    要写绝对路径</span><br><span class="line">        程序组成：</span><br><span class="line">            二进制文件</span><br><span class="line">            库文件</span><br><span class="line">            配置文件</span><br><span class="line">            帮助文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何获取命令帮助"><a href="#如何获取命令帮助" class="headerlink" title="如何获取命令帮助"></a>如何获取命令帮助</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;内部命令</span><br><span class="line">    help COMMAND</span><br><span class="line">&#x2F;&#x2F;外部命令</span><br><span class="line">    COMMAND --help</span><br><span class="line">&#x2F;&#x2F;在线文档</span><br><span class="line">    info COMMAND</span><br><span class="line">&#x2F;&#x2F;文档</span><br><span class="line">    &#x2F;usr&#x2F;share&#x2F;doc</span><br><span class="line">whatis COMMAND    &#x2F;&#x2F;用于查看COMMAND出现在man的哪一章节中</span><br><span class="line">                &#x2F;&#x2F;查询man帮助中此命令的作业</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;man是分章节的，以下是每一章节的内容介绍：</span><br><span class="line">    1.用户命令(&#x2F;bin，&#x2F;usr&#x2F;bin，&#x2F;usr&#x2F;local&#x2F;bin)；</span><br><span class="line">    2.系统调用；</span><br><span class="line">    3.库调用；</span><br><span class="line">    4.特殊文件（设备文件）；</span><br><span class="line">    5.文件格式（配置文件的语法）；</span><br><span class="line">    6.游戏；</span><br><span class="line">    7.杂项(Miscellaneous)；</span><br><span class="line">    8.管理命令(&#x2F;sbin，&#x2F;usr&#x2F;sbin，&#x2F;usr&#x2F;local&#x2F;sbin)</span><br><span class="line">    </span><br><span class="line">&#x2F;&#x2F;man手册注意事项：</span><br><span class="line">    []             &#x2F;&#x2F;可选</span><br><span class="line">    &lt;&gt;             &#x2F;&#x2F;必选</span><br><span class="line">    ...            &#x2F;&#x2F;可以出现多次</span><br><span class="line">    |              &#x2F;&#x2F;多选一</span><br><span class="line">    &#123;&#125;             &#x2F;&#x2F;分组</span><br><span class="line">    NAME           &#x2F;&#x2F;命令名称及功能简要说明</span><br><span class="line">    SYNOPSIS       &#x2F;&#x2F;用法说明，包括可用的选项</span><br><span class="line">    DESCRIPTION    &#x2F;&#x2F;命令功能的详尽说明，可能包括每一个选项的意义</span><br><span class="line">    OPTIONS        &#x2F;&#x2F;说明每一个选项的意义</span><br><span class="line">    FILES          &#x2F;&#x2F;此命令相关的配置文件</span><br><span class="line">    BUGS           &#x2F;&#x2F;报告BUG</span><br><span class="line">    EXAMPLES       &#x2F;&#x2F;使用示例</span><br><span class="line">    SEE ALSO       &#x2F;&#x2F;另外参照</span><br><span class="line">    </span><br><span class="line">不建议使用命令帮助</span><br><span class="line">相对的  建议使用man帮助  按q退出man帮助</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -381,7 +409,7 @@
       
         <div class="post-tags">
           
-            <a href="/Customize.github.io/tags/Linux/" rel="tag"># Linux</a>
+            <a href="/Customize.github.io/tags/Linux%E5%9F%BA%E7%A1%80/" rel="tag"># Linux基础</a>
           
         </div>
       
@@ -454,8 +482,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -496,7 +533,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -555,6 +592,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#主机管理命令"><span class="nav-number">1.</span> <span class="nav-text">主机管理命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何获取命令帮助"><span class="nav-number">2.</span> <span class="nav-text">如何获取命令帮助</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
