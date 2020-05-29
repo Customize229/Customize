@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="文本内容管理命令​">
+<meta name="description" content="压缩、解压缩命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux基础（五）">
-<meta property="og:url" content="https://customize229.github.io/Customize.github.io/2020/05/13/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%94%EF%BC%89/index.html">
+<meta property="og:title" content="压缩、解压缩、管道符">
+<meta property="og:url" content="https://customize229.github.io/Customize.github.io/2020/05/29/%E5%8E%8B%E7%BC%A9%E3%80%81%E8%A7%A3%E5%8E%8B%E7%BC%A9%E3%80%81%E7%AE%A1%E9%81%93%E7%AC%A6/index.html">
 <meta property="og:site_name" content="横川马鹿">
-<meta property="og:description" content="文本内容管理命令​">
-<meta property="article:published_time" content="2020-05-13T02:38:20.000Z">
-<meta property="article:modified_time" content="2020-05-28T16:45:45.308Z">
+<meta property="og:description" content="压缩、解压缩命令">
+<meta property="article:published_time" content="2020-05-29T01:12:26.000Z">
+<meta property="article:modified_time" content="2020-05-29T03:18:24.586Z">
 <meta property="article:author" content="WH">
 <meta property="article:tag" content="Linux基础">
 <meta name="twitter:card" content="summary">
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="https://Customize229.github.io/Customize.github.io/2020/05/13/Linux基础（五）/"/>
+  <link rel="canonical" href="https://Customize229.github.io/Customize.github.io/2020/05/29/压缩、解压缩、管道符/"/>
 
 
 
@@ -140,7 +140,7 @@
     }
 </style>
 
-  <title>Linux基础（五） | 横川马鹿</title>
+  <title>压缩、解压缩、管道符 | 横川马鹿</title>
   
 
 
@@ -278,7 +278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Customize229.github.io/Customize.github.io/Customize.github.io/2020/05/13/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%94%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://Customize229.github.io/Customize.github.io/Customize.github.io/2020/05/29/%E5%8E%8B%E7%BC%A9%E3%80%81%E8%A7%A3%E5%8E%8B%E7%BC%A9%E3%80%81%E7%AE%A1%E9%81%93%E7%AC%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WH">
@@ -295,7 +295,7 @@
     
         
         
-          <h1 class="post-title" itemprop="name headline">Linux基础（五）</h1>
+          <h1 class="post-title" itemprop="name headline">压缩、解压缩、管道符</h1>
         
     
         <div class="post-meta">
@@ -307,8 +307,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-13T10:38:20+08:00">
-                2020-05-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-29T09:12:26+08:00">
+                2020-05-29
               </time>
             
     
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k
+                  1.2k
                 </span>
               
     
@@ -386,33 +386,23 @@
       
     
       
-        <h3 id="文本内容管理命令"><a href="#文本内容管理命令" class="headerlink" title="文本内容管理命令"></a>文本内容管理命令</h3><p>​    <a id="more"></a></p>
-<h5 id="1-文本内容查看"><a href="#1-文本内容查看" class="headerlink" title="1.文本内容查看"></a>1.文本内容查看</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">cat    &#x2F;&#x2F;拼凑文件内容并输出至标准输出</span><br><span class="line"></span><br><span class="line">    -n    &#x2F;&#x2F;显示行号</span><br><span class="line"></span><br><span class="line">   注意：使用cat查看文件内容时会将文件的所有内容加载至内存，所以应避免使用cat打开巨大文件</span><br><span class="line"></span><br><span class="line">tac    &#x2F;&#x2F;连接文件并倒序打印内容至标准输出</span><br><span class="line"></span><br><span class="line">more   &#x2F;&#x2F;全屏查看文本文件内容，只能从前往后，不能从后往前</span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;文件内容显示完毕后自动退出（回车显示下一行，空格显示下一页）</span><br><span class="line"></span><br><span class="line">less   &#x2F;&#x2F;全屏查看文本文件内容，可从前往后亦可从后往前。推荐使用 （回车回车显示下一行，空格显示下一页，按Q退出）</span><br><span class="line"></span><br><span class="line">head   &#x2F;&#x2F;查看文本文件头部内容，默认打印10行</span><br><span class="line"></span><br><span class="line">    -n    &#x2F;&#x2F;指定要打印的行数，-n 可以是15也可以是-15</span><br><span class="line"></span><br><span class="line">tail  &#x2F;&#x2F;查看文本文件尾部内容，同 head 默认打印10行</span><br><span class="line"></span><br><span class="line">    -n    &#x2F;&#x2F;指定要打印的行数，-n 可以是15也可以是-15</span><br></pre></td></tr></table></figure>
+        <h4 id="压缩、解压缩命令"><a href="#压缩、解压缩命令" class="headerlink" title="压缩、解压缩命令"></a>压缩、解压缩命令</h4> <a id="more"></a>
 
-<h5 id="文本内容排序"><a href="#文本内容排序" class="headerlink" title="文本内容排序"></a>文本内容排序</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">sort   &#x2F;&#x2F;默认升序排序，不是按数值大小排序（根据首字符）</span><br><span class="line"></span><br><span class="line">    -n    &#x2F;&#x2F;根据数值大小进行排序（可以配合 -r 使用）</span><br><span class="line"></span><br><span class="line">    -r    &#x2F;&#x2F;逆序排序</span><br><span class="line"></span><br><span class="line">    -t    &#x2F;&#x2F;字段分隔符</span><br><span class="line"></span><br><span class="line">    -k    &#x2F;&#x2F;以哪个字段为关键字进行排序</span><br><span class="line"></span><br><span class="line">    -u    &#x2F;&#x2F;去重，排序后相同的行只显示一次</span><br><span class="line"></span><br><span class="line">    -f     &#x2F;&#x2F;排序时忽略字符大小写</span><br><span class="line"></span><br><span class="line">uniq   &#x2F;&#x2F;报告重复的行（“连续”且完全相同方为重复）</span><br><span class="line"></span><br><span class="line">    -c    &#x2F;&#x2F;显示文件中重复的次数</span><br><span class="line"></span><br><span class="line">    -d    &#x2F;&#x2F;只显示重复的行（下面 2 q 与 2 123 中的2是指有两行重复）   </span><br><span class="line">    -u    &#x2F;&#x2F;只显示未重复的行</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">\\压缩格式</span><br><span class="line">  gz、bz2、xz、zip、Z</span><br><span class="line">  </span><br><span class="line">compress    &#x2F;&#x2F;用此命令压缩文件其文件名为FILENAME.Z，解压用uncompresss</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">gzip        &#x2F;&#x2F;压缩后的文件以.gz结尾；只能压缩文件不能压缩目录</span><br><span class="line">      gzip &#x2F;path&#x2F;to&#x2F;somefile    &#x2F;&#x2F;压缩完成后会删除原文件</span><br><span class="line">        -d    &#x2F;&#x2F;解压缩，解压完成后会删除原文件</span><br><span class="line">        -c    &#x2F;&#x2F;将结果输出至标准输出，保留原文件</span><br><span class="line">        -#    &#x2F;&#x2F;#用1-9代替，-1压缩等级最低；-9压缩比最高。默认压缩比是-6</span><br><span class="line">        -l    &#x2F;&#x2F;查看压缩文件内的内容；从左至右依次显示为：压缩比的大小；未压缩文件的大小；压缩比；未压缩文件的名称</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">gunzip    &#x2F;&#x2F;解压</span><br><span class="line">      gunzip &#x2F;path&#x2F;to&#x2F;some--compress--file.gz    &#x2F;&#x2F;解压完成后会删除原文件</span><br><span class="line">      zcat &#x2F;path&#x2F;to&#x2F;comefile.gz    &#x2F;&#x2F;不解压的情况下查看文本文件的内容</span><br><span class="line">      </span><br><span class="line">bzip2    &#x2F;&#x2F;压缩后的文件以.bz2结尾</span><br><span class="line">         &#x2F;&#x2F;bzip2是一款比gzip有着更大压缩比的压缩工具，使用格式近似</span><br><span class="line">        bzip2 &#x2F;path&#x2F;to&#x2F;somefile    &#x2F;&#x2F;压缩完成后会删除原文件</span><br><span class="line">        -d    &#x2F;&#x2F;解压缩，解压完成后会删除原文件</span><br><span class="line">        -#    &#x2F;&#x2F;#用1-9代替，指定压缩比，默认为6</span><br><span class="line">        -k    &#x2F;&#x2F;keep，压缩时保留原文件</span><br><span class="line">      bzip2    &#x2F;&#x2F;解压</span><br><span class="line">          bzip2 &#x2F;path&#x2F;to&#x2F;some_compress_file.bz2  &#x2F;&#x2F;解压完成后会删除原文件</span><br><span class="line">      bzcat    &#x2F;&#x2F;path&#x2F;to&#x2F;somefile.bz2    &#x2F;&#x2F;不解压的情况下查看文本文件的内容</span><br><span class="line">      </span><br><span class="line">      </span><br><span class="line">xz    &#x2F;&#x2F;压缩后的文件以.xz结尾</span><br><span class="line">      &#x2F;&#x2F;比zip2有着更大压缩比的压缩工具，使用格式近似</span><br><span class="line">    xz &#x2F;path&#x2F;to&#x2F;somefile    &#x2F;&#x2F;压缩完成后会删除原文件</span><br><span class="line">        -d    &#x2F;&#x2F;解压缩，解压完成后会删除原文件</span><br><span class="line">        -#    &#x2F;&#x2F;#用1-9代替，指定压缩比，默认为6</span><br><span class="line">        -k    &#x2F;&#x2F;keep，压缩时保留原文件</span><br><span class="line">        </span><br><span class="line">unxz    &#x2F;&#x2F;解压</span><br><span class="line">    unxz &#x2F;path&#x2F;to&#x2F;some_compress_file.xz    &#x2F;&#x2F;解压完成后会删除原文件</span><br><span class="line">    xzcat &#x2F;path&#x2F;to&#x2F;somefile.xz    &#x2F;&#x2F;不解压的情况下查看文本文件的内容</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">zip    &#x2F;&#x2F;既归档又压缩的工具。zip可以压缩目录</span><br><span class="line">       &#x2F;&#x2F;gz、bz2、xz都只能压缩文件，zip压缩后不会删除文件</span><br><span class="line">     zip filename.zip file1 file2 ...</span><br><span class="line">     zip filename.zip DIPR&#x2F;*</span><br><span class="line">     </span><br><span class="line">unzip</span><br><span class="line">     unzip filename.zip</span><br><span class="line">     </span><br><span class="line">    &#x2F;&#x2F;归档archive</span><br><span class="line">    &#x2F;&#x2F;归档，归档本身并不意味着压缩</span><br><span class="line">    </span><br><span class="line">    tar    &#x2F;&#x2F;归档工具，只归档不压缩</span><br><span class="line">        -c    &#x2F;&#x2F;创建归档文件（cf联合使用，先创建归档文件，再将文件放入归档文件进行压缩）</span><br><span class="line">        -f file.tar    &#x2F;&#x2F;操作的归档文件</span><br><span class="line">        -x    &#x2F;&#x2F;还原归档</span><br><span class="line">        -v    &#x2F;&#x2F;显示归档过程</span><br><span class="line">        -p    &#x2F;&#x2F;归档时保留权限信息，只有管理员才有权限用此选项（root预设）</span><br><span class="line">        -C    &#x2F;&#x2F;将展开的归档文件保存至指定目录下</span><br><span class="line">        --delete    &#x2F;&#x2F;从归档文件中删除文件</span><br><span class="line">        --xattrs    &#x2F;&#x2F;在归档文件时保留文件的扩展属性信息</span><br><span class="line">        -tf &#x2F;path&#x2F;to&#x2F;file.tar    &#x2F;&#x2F;不展开文档，直接查看归档了哪些文件</span><br><span class="line">        -zcf    &#x2F;&#x2F;归档并调用gzip压缩</span><br><span class="line">        -zxf    &#x2F;&#x2F;调用gzip解压缩并展开归档</span><br><span class="line">        -jcf    &#x2F;&#x2F;归档并调用bzip2压缩</span><br><span class="line">        -jxf    &#x2F;&#x2F;调用bzip2解压缩并展开归档</span><br><span class="line">        -Jcf    &#x2F;&#x2F;归档并调用xz压缩</span><br><span class="line">        -Jxf    &#x2F;&#x2F;调用xz解压缩并展开归档</span><br></pre></td></tr></table></figure>
 
-<pre><code>[root@hcml wh]# uniq -c 让我康康 
-1 里面没有好康的
-2 q
-1 u
-1 wad
-1 adas234
-2 123</code></pre><h5 id="文本内容统计"><a href="#文本内容统计" class="headerlink" title="文本内容统计"></a>文本内容统计</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">wc(word count)</span><br><span class="line"></span><br><span class="line">    -c    &#x2F;&#x2F;显示字节数</span><br><span class="line"></span><br><span class="line">    -l     &#x2F;&#x2F;显示行数</span><br><span class="line"></span><br><span class="line">    -w    &#x2F;&#x2F;显示单词数</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;大小统计</span><br><span class="line"></span><br><span class="line">du    &#x2F;&#x2F;查看文件或目录占用的磁盘空间大小</span><br><span class="line"></span><br><span class="line">    -h    &#x2F;&#x2F;以人类友好（看得懂）的方式显示大小</span><br><span class="line"></span><br><span class="line">    -s    &#x2F;&#x2F;显示总的占用空间大小</span><br><span class="line"></span><br><span class="line">df    &#x2F;&#x2F;报告文件系统磁盘空间使用情况（要带目标磁盘）</span><br><span class="line"></span><br><span class="line">    -h    &#x2F;&#x2F;以以人类友好（看得懂）的方式显示大小</span><br><span class="line"></span><br><span class="line">    -l     &#x2F;&#x2F;显示inode信息</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">lsblk    &#x2F;&#x2F;查看磁盘划分了多少个区块，给了谁使用</span><br></pre></td></tr></table></figure>
+<h4 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h4><p>//系统设定</p>
+<p>默认输入设备    //标准输入，STDIN，0（键盘）</p>
+<p>默认输出设备    //标准输出，STDOUT，1（显示器）</p>
+<p>标准错误输出    //STDERR，2（显示器）</p>
+<h5 id="I-0重定向："><a href="#I-0重定向：" class="headerlink" title="// I/0重定向："></a>// I/0重定向：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;：覆盖输出（会清空原文件里的内容）</span><br><span class="line">&gt;&gt;：最佳输出（不会覆盖原本内容）</span><br><span class="line"></span><br><span class="line">2&gt;    &#x2F;&#x2F;重定向错误输出</span><br><span class="line">2&gt;&gt;    &#x2F;&#x2F;追加重定向错误输出</span><br><span class="line">&amp;&gt;    &#x2F;&#x2F;覆盖重定向标准输出或错误输出至同一个文件</span><br><span class="line">&amp;&amp;&gt;    &#x2F;&#x2F;追加重定向标准输出或错误输出至同一个文件</span><br><span class="line">&lt;    &#x2F;&#x2F;输入重定向</span><br><span class="line">&lt;&lt;    &#x2F;&#x2F;here Dociment</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@hcml wh]# wc 让我康康 3  6 26 让我康康</span><br><span class="line">&#123;有3行、6个单词、占40个字节（占空格和换行符） 存在于让我康康文件中&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="文本内容过滤"><a href="#文本内容过滤" class="headerlink" title="文本内容过滤"></a>文本内容过滤</h5><p>cut    //截取文本内容（只能截取某一段）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cut OPTION...[FILE]...</span><br><span class="line">    -d    &#x2F;&#x2F;指定指端分隔符，默认是空格</span><br><span class="line">    -f    &#x2F;&#x2F;指定要显示的字段</span><br><span class="line">        -f 1,3  显示第一个字段和第三个字段</span><br><span class="line">        -f 1-3  显示第一个字段到第三个字段</span><br></pre></td></tr></table></figure>
-
-<p>awk    //基于列的文本报告工具</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-F&#39;&#39;    &#x2F;&#x2F;选择分隔符；分隔符用单引号引起来</span><br><span class="line">&#39;&#x2F;root&#x2F;&#39;    &#x2F;&#x2F;匹配关键字root的行</span><br><span class="line">&#39;&#123;print $#&#125;&#39;    &#x2F;&#x2F;选择打印第#列</span><br><span class="line">&#39;NR&#x3D;&#x3D;#&#123;print $#&#125;&#39;    &#x2F;&#x2F;选择打印第几行第几列</span><br></pre></td></tr></table></figure>
-
-<p>sed    //基于行的过滤和转换文本的流编辑器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  -i    &#x2F;&#x2F;修改文件内容</span><br><span class="line">  </span><br><span class="line">sed -i &#39;s&#x2F;原字符串&#x2F;新字符串&#x2F;&#39; file    &#x2F;&#x2F;新字符串替换原字符串，只替换每行第一个匹配到的字符</span><br><span class="line"></span><br><span class="line">sed -i &#39;s&#x2F;原字符串&#x2F;新字符串&#x2F;g&#39; file    &#x2F;&#x2F;新字符串替换原字符串，替换整行所有匹配到的字符串（全局替换）</span><br></pre></td></tr></table></figure>
-
-<p>grep、egrep、fgrep    //文本内容查找</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">grep    &#x2F;&#x2F;根据模式搜索文本内容，并将复核模式的内容行显示出来</span><br><span class="line">        &#x2F;&#x2F;使用基本正则表达式定义的模式来过滤文本的命令</span><br><span class="line">        </span><br><span class="line">    pattern（模式）    &#x2F;&#x2F;文本字符和正则表达式的元字符组合而成的匹配条件</span><br><span class="line">        -i    &#x2F;&#x2F;忽略大小写</span><br><span class="line">        --color    &#x2F;&#x2F;匹配到的内容高亮显示（默认添加）</span><br><span class="line">        -v    &#x2F;&#x2F;显示没有被模式匹配到的行（取反）</span><br><span class="line">        -o    &#x2F;&#x2F;显示被模式匹配到的字符串</span><br><span class="line">        -E    &#x2F;&#x2F;使用扩展正则表达式;grep -E相当于使用egrep</span><br><span class="line">        -q    &#x2F;&#x2F;静默模式，不输出任何信息</span><br><span class="line">        -A 1    &#x2F;&#x2F;被模式匹配到的内容以及其后面一行的内容都显示出来</span><br><span class="line">                &#x2F;&#x2F;如果把1改成2就表示被模式匹配到的内容以及其后面两行的内容均显示出来</span><br><span class="line">        -B 1    &#x2F;&#x2F;被模式匹配到的内容以及其前面一行的内容都显示出来</span><br><span class="line">                &#x2F;&#x2F;如果把1改成2就表示被模式匹配到的内容以及其后面两行的内容均显示出来</span><br><span class="line">        -C 1    &#x2F;&#x2F;被模式匹配到的内容以及其前后各一行的内容都显示出来</span><br><span class="line">                &#x2F;&#x2F;如果把1改成2就表示被模式匹配到的内容以及其前后两行的内容均显示寄出来</span><br><span class="line">        </span><br><span class="line">fgrep    &#x2F;&#x2F;不支持正则表达式，执行速度快</span><br></pre></td></tr></table></figure>
-
+<p>file可以查看文件类型</p>
+<h4 id="管道符"><a href="#管道符" class="headerlink" title="管道符"></a>管道符</h4><p>管道    //前一个命令的输出，作为后一个命令的输入。最后一个命令会在当前shell进程<br>命令1|命令2|命令3|…</p>
+<p>tee    //从标准输入读取数据，输出一份到屏幕上，一份保存到文件</p>
+<p>与cat&gt;/root/wh类似</p>
+<p>xargs    //通过管道将查找到的内容给xargs处理，xargs后面直接跟命令即可</p>
+<p>1.将前面命令执行的结果作为参数交给后面的命令执行</p>
+<p>2.将前面的命令执行的结果进行拆分（以空格或回车为分隔符），依次将拆分的结果交给后面的命令执行（执行多次）</p>
 
       
     </div>
@@ -443,8 +433,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Customize.github.io/2020/05/11/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89/" rel="next" title="Linux基础（四）">
-                <i class="fa fa-chevron-left"></i> Linux基础（四）
+              <a href="/Customize.github.io/2020/05/29/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E5%85%AD%EF%BC%89/" rel="next" title="Linux基础（六）">
+                <i class="fa fa-chevron-left"></i> Linux基础（六）
               </a>
             
           </div>
@@ -453,8 +443,8 @@
     
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Customize.github.io/2020/05/29/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E5%85%AD%EF%BC%89/" rel="prev" title="Linux基础（六）">
-                Linux基础（六） <i class="fa fa-chevron-right"></i>
+              <a href="/Customize.github.io/2020/05/29/%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E7%AE%A1%E7%90%86/" rel="prev" title="用户和组管理">
+                用户和组管理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -627,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本内容管理命令"><span class="nav-number">1.</span> <span class="nav-text">文本内容管理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-文本内容查看"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.文本内容查看</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本内容排序"><span class="nav-number">1.0.2.</span> <span class="nav-text">文本内容排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本内容统计"><span class="nav-number">1.0.3.</span> <span class="nav-text">文本内容统计</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本内容过滤"><span class="nav-number">1.0.4.</span> <span class="nav-text">文本内容过滤</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#压缩、解压缩命令"><span class="nav-number">1.</span> <span class="nav-text">压缩、解压缩命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重定向"><span class="nav-number">2.</span> <span class="nav-text">重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#I-0重定向："><span class="nav-number">2.1.</span> <span class="nav-text">&#x2F;&#x2F; I&#x2F;0重定向：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管道符"><span class="nav-number">3.</span> <span class="nav-text">管道符</span></a></li></ol></div>
             
 
           </div>

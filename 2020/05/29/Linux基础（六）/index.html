@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="文本内容管理命令​">
+<meta name="description" content="文件查找命令​">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux基础（五）">
-<meta property="og:url" content="https://customize229.github.io/Customize.github.io/2020/05/13/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%94%EF%BC%89/index.html">
+<meta property="og:title" content="Linux基础（六）">
+<meta property="og:url" content="https://customize229.github.io/Customize.github.io/2020/05/29/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E5%85%AD%EF%BC%89/index.html">
 <meta property="og:site_name" content="横川马鹿">
-<meta property="og:description" content="文本内容管理命令​">
-<meta property="article:published_time" content="2020-05-13T02:38:20.000Z">
-<meta property="article:modified_time" content="2020-05-28T16:45:45.308Z">
+<meta property="og:description" content="文件查找命令​">
+<meta property="article:published_time" content="2020-05-28T16:42:21.000Z">
+<meta property="article:modified_time" content="2020-05-29T01:17:04.433Z">
 <meta property="article:author" content="WH">
 <meta property="article:tag" content="Linux基础">
 <meta name="twitter:card" content="summary">
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="https://Customize229.github.io/Customize.github.io/2020/05/13/Linux基础（五）/"/>
+  <link rel="canonical" href="https://Customize229.github.io/Customize.github.io/2020/05/29/Linux基础（六）/"/>
 
 
 
@@ -140,7 +140,7 @@
     }
 </style>
 
-  <title>Linux基础（五） | 横川马鹿</title>
+  <title>Linux基础（六） | 横川马鹿</title>
   
 
 
@@ -278,7 +278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Customize229.github.io/Customize.github.io/Customize.github.io/2020/05/13/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%94%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://Customize229.github.io/Customize.github.io/Customize.github.io/2020/05/29/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E5%85%AD%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WH">
@@ -295,7 +295,7 @@
     
         
         
-          <h1 class="post-title" itemprop="name headline">Linux基础（五）</h1>
+          <h1 class="post-title" itemprop="name headline">Linux基础（六）</h1>
         
     
         <div class="post-meta">
@@ -307,8 +307,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-13T10:38:20+08:00">
-                2020-05-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-29T00:42:21+08:00">
+                2020-05-29
               </time>
             
     
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k
+                  825
                 </span>
               
     
@@ -386,32 +386,8 @@
       
     
       
-        <h3 id="文本内容管理命令"><a href="#文本内容管理命令" class="headerlink" title="文本内容管理命令"></a>文本内容管理命令</h3><p>​    <a id="more"></a></p>
-<h5 id="1-文本内容查看"><a href="#1-文本内容查看" class="headerlink" title="1.文本内容查看"></a>1.文本内容查看</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">cat    &#x2F;&#x2F;拼凑文件内容并输出至标准输出</span><br><span class="line"></span><br><span class="line">    -n    &#x2F;&#x2F;显示行号</span><br><span class="line"></span><br><span class="line">   注意：使用cat查看文件内容时会将文件的所有内容加载至内存，所以应避免使用cat打开巨大文件</span><br><span class="line"></span><br><span class="line">tac    &#x2F;&#x2F;连接文件并倒序打印内容至标准输出</span><br><span class="line"></span><br><span class="line">more   &#x2F;&#x2F;全屏查看文本文件内容，只能从前往后，不能从后往前</span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;文件内容显示完毕后自动退出（回车显示下一行，空格显示下一页）</span><br><span class="line"></span><br><span class="line">less   &#x2F;&#x2F;全屏查看文本文件内容，可从前往后亦可从后往前。推荐使用 （回车回车显示下一行，空格显示下一页，按Q退出）</span><br><span class="line"></span><br><span class="line">head   &#x2F;&#x2F;查看文本文件头部内容，默认打印10行</span><br><span class="line"></span><br><span class="line">    -n    &#x2F;&#x2F;指定要打印的行数，-n 可以是15也可以是-15</span><br><span class="line"></span><br><span class="line">tail  &#x2F;&#x2F;查看文本文件尾部内容，同 head 默认打印10行</span><br><span class="line"></span><br><span class="line">    -n    &#x2F;&#x2F;指定要打印的行数，-n 可以是15也可以是-15</span><br></pre></td></tr></table></figure>
-
-<h5 id="文本内容排序"><a href="#文本内容排序" class="headerlink" title="文本内容排序"></a>文本内容排序</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">sort   &#x2F;&#x2F;默认升序排序，不是按数值大小排序（根据首字符）</span><br><span class="line"></span><br><span class="line">    -n    &#x2F;&#x2F;根据数值大小进行排序（可以配合 -r 使用）</span><br><span class="line"></span><br><span class="line">    -r    &#x2F;&#x2F;逆序排序</span><br><span class="line"></span><br><span class="line">    -t    &#x2F;&#x2F;字段分隔符</span><br><span class="line"></span><br><span class="line">    -k    &#x2F;&#x2F;以哪个字段为关键字进行排序</span><br><span class="line"></span><br><span class="line">    -u    &#x2F;&#x2F;去重，排序后相同的行只显示一次</span><br><span class="line"></span><br><span class="line">    -f     &#x2F;&#x2F;排序时忽略字符大小写</span><br><span class="line"></span><br><span class="line">uniq   &#x2F;&#x2F;报告重复的行（“连续”且完全相同方为重复）</span><br><span class="line"></span><br><span class="line">    -c    &#x2F;&#x2F;显示文件中重复的次数</span><br><span class="line"></span><br><span class="line">    -d    &#x2F;&#x2F;只显示重复的行（下面 2 q 与 2 123 中的2是指有两行重复）   </span><br><span class="line">    -u    &#x2F;&#x2F;只显示未重复的行</span><br></pre></td></tr></table></figure>
-
-<pre><code>[root@hcml wh]# uniq -c 让我康康 
-1 里面没有好康的
-2 q
-1 u
-1 wad
-1 adas234
-2 123</code></pre><h5 id="文本内容统计"><a href="#文本内容统计" class="headerlink" title="文本内容统计"></a>文本内容统计</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">wc(word count)</span><br><span class="line"></span><br><span class="line">    -c    &#x2F;&#x2F;显示字节数</span><br><span class="line"></span><br><span class="line">    -l     &#x2F;&#x2F;显示行数</span><br><span class="line"></span><br><span class="line">    -w    &#x2F;&#x2F;显示单词数</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;大小统计</span><br><span class="line"></span><br><span class="line">du    &#x2F;&#x2F;查看文件或目录占用的磁盘空间大小</span><br><span class="line"></span><br><span class="line">    -h    &#x2F;&#x2F;以人类友好（看得懂）的方式显示大小</span><br><span class="line"></span><br><span class="line">    -s    &#x2F;&#x2F;显示总的占用空间大小</span><br><span class="line"></span><br><span class="line">df    &#x2F;&#x2F;报告文件系统磁盘空间使用情况（要带目标磁盘）</span><br><span class="line"></span><br><span class="line">    -h    &#x2F;&#x2F;以以人类友好（看得懂）的方式显示大小</span><br><span class="line"></span><br><span class="line">    -l     &#x2F;&#x2F;显示inode信息</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">lsblk    &#x2F;&#x2F;查看磁盘划分了多少个区块，给了谁使用</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@hcml wh]# wc 让我康康 3  6 26 让我康康</span><br><span class="line">&#123;有3行、6个单词、占40个字节（占空格和换行符） 存在于让我康康文件中&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="文本内容过滤"><a href="#文本内容过滤" class="headerlink" title="文本内容过滤"></a>文本内容过滤</h5><p>cut    //截取文本内容（只能截取某一段）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cut OPTION...[FILE]...</span><br><span class="line">    -d    &#x2F;&#x2F;指定指端分隔符，默认是空格</span><br><span class="line">    -f    &#x2F;&#x2F;指定要显示的字段</span><br><span class="line">        -f 1,3  显示第一个字段和第三个字段</span><br><span class="line">        -f 1-3  显示第一个字段到第三个字段</span><br></pre></td></tr></table></figure>
-
-<p>awk    //基于列的文本报告工具</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-F&#39;&#39;    &#x2F;&#x2F;选择分隔符；分隔符用单引号引起来</span><br><span class="line">&#39;&#x2F;root&#x2F;&#39;    &#x2F;&#x2F;匹配关键字root的行</span><br><span class="line">&#39;&#123;print $#&#125;&#39;    &#x2F;&#x2F;选择打印第#列</span><br><span class="line">&#39;NR&#x3D;&#x3D;#&#123;print $#&#125;&#39;    &#x2F;&#x2F;选择打印第几行第几列</span><br></pre></td></tr></table></figure>
-
-<p>sed    //基于行的过滤和转换文本的流编辑器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  -i    &#x2F;&#x2F;修改文件内容</span><br><span class="line">  </span><br><span class="line">sed -i &#39;s&#x2F;原字符串&#x2F;新字符串&#x2F;&#39; file    &#x2F;&#x2F;新字符串替换原字符串，只替换每行第一个匹配到的字符</span><br><span class="line"></span><br><span class="line">sed -i &#39;s&#x2F;原字符串&#x2F;新字符串&#x2F;g&#39; file    &#x2F;&#x2F;新字符串替换原字符串，替换整行所有匹配到的字符串（全局替换）</span><br></pre></td></tr></table></figure>
-
-<p>grep、egrep、fgrep    //文本内容查找</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">grep    &#x2F;&#x2F;根据模式搜索文本内容，并将复核模式的内容行显示出来</span><br><span class="line">        &#x2F;&#x2F;使用基本正则表达式定义的模式来过滤文本的命令</span><br><span class="line">        </span><br><span class="line">    pattern（模式）    &#x2F;&#x2F;文本字符和正则表达式的元字符组合而成的匹配条件</span><br><span class="line">        -i    &#x2F;&#x2F;忽略大小写</span><br><span class="line">        --color    &#x2F;&#x2F;匹配到的内容高亮显示（默认添加）</span><br><span class="line">        -v    &#x2F;&#x2F;显示没有被模式匹配到的行（取反）</span><br><span class="line">        -o    &#x2F;&#x2F;显示被模式匹配到的字符串</span><br><span class="line">        -E    &#x2F;&#x2F;使用扩展正则表达式;grep -E相当于使用egrep</span><br><span class="line">        -q    &#x2F;&#x2F;静默模式，不输出任何信息</span><br><span class="line">        -A 1    &#x2F;&#x2F;被模式匹配到的内容以及其后面一行的内容都显示出来</span><br><span class="line">                &#x2F;&#x2F;如果把1改成2就表示被模式匹配到的内容以及其后面两行的内容均显示出来</span><br><span class="line">        -B 1    &#x2F;&#x2F;被模式匹配到的内容以及其前面一行的内容都显示出来</span><br><span class="line">                &#x2F;&#x2F;如果把1改成2就表示被模式匹配到的内容以及其后面两行的内容均显示出来</span><br><span class="line">        -C 1    &#x2F;&#x2F;被模式匹配到的内容以及其前后各一行的内容都显示出来</span><br><span class="line">                &#x2F;&#x2F;如果把1改成2就表示被模式匹配到的内容以及其前后两行的内容均显示寄出来</span><br><span class="line">        </span><br><span class="line">fgrep    &#x2F;&#x2F;不支持正则表达式，执行速度快</span><br></pre></td></tr></table></figure>
+        <h5 id="文件查找命令"><a href="#文件查找命令" class="headerlink" title="文件查找命令"></a>文件查找命令</h5><p>​    <a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">find    &#x2F;&#x2F;实时查找，精确性强，遍历指定目录中所有文件完成查找</span><br><span class="line">        &#x2F;&#x2F;查找速度慢，支持众多查找标准</span><br><span class="line">        </span><br><span class="line">    语法：find[OPTION...]查找路径 查找标准 查找到以后的处理动作</span><br><span class="line">    查找路径    &#x2F;&#x2F;默认为当前路径</span><br><span class="line">    查找标准    &#x2F;&#x2F;默认为指定目录下的所有文件</span><br><span class="line">        -name &#39;filename&#39;     &#x2F;&#x2F;对文件名做精确匹配，支持glob通配符机制</span><br><span class="line">        -iname &#39;filename&#39;    &#x2F;&#x2F;文件名匹配时不区分大小写</span><br><span class="line">        -regex pattern       &#x2F;&#x2F;匹配整个文件路径字符串，而不仅仅是文件名称</span><br><span class="line">        -user username      &#x2F;&#x2F;根据属主来查找</span><br><span class="line">        -group groupname    &#x2F;&#x2F;根据属组来查找</span><br><span class="line">        -uid    &#x2F;&#x2F;根据UID进行查找，当用户被删除以后文件的属主会变为此用户的UID</span><br><span class="line">        -gid    &#x2F;&#x2F;根据GID进行查找，当用户被删除以后文件的属组会变为此用户的GID</span><br><span class="line">        -nogroup    &#x2F;&#x2F;查找没有属组的文件，组被删除的情况下产生的文件，只有GID没有属组</span><br><span class="line">        -type   &#x2F;&#x2F;根据文件类型来查找，（f普通文件，d目录文件，c字符设备文件，b块设备文件，I链接文件，p命令管道文件，s套接字文件）</span><br><span class="line">        -size   &#x2F;&#x2F;根据文件的大小进行查找。如1K、1M、+10K、+10M、-1K、-1M（+表示大于、-表示小于）</span><br><span class="line">                [+|-]</span><br><span class="line">                #K、#M、#G</span><br><span class="line">                #Unit表示（从#-1到#之间的范围大小）</span><br><span class="line">                -#Unit表示（从0到#-1的范围大小）</span><br><span class="line">                +#Unit表示（大于#的所有）</span><br><span class="line">                </span><br><span class="line">        -mtime    &#x2F;&#x2F;修改时间</span><br><span class="line">        -ctime    &#x2F;&#x2F;改变时间</span><br><span class="line">        -atime    &#x2F;&#x2F;访问时间</span><br><span class="line">            +5    &#x2F;&#x2F;五天前</span><br><span class="line">            -5    &#x2F;&#x2F;五天内</span><br><span class="line">        </span><br><span class="line">        -mmin    &#x2F;&#x2F;多少分钟修改过</span><br><span class="line">        -cmin    &#x2F;&#x2F;多少分钟改变过</span><br><span class="line">        -amin    &#x2F;&#x2F;多少分钟访问过</span><br><span class="line">            +5    &#x2F;&#x2F;5分钟前</span><br><span class="line">            -5    &#x2F;&#x2F;5分钟内</span><br><span class="line">        -perm mode    &#x2F;&#x2F;根据权限精确查找</span><br><span class="line">        -perm -mode   &#x2F;&#x2F;9位权限中有任何一位权限匹配都视为符合查找条件</span><br><span class="line">        -perm &#x2F;mode   &#x2F;&#x2F;文件权限能完全包含此mode时才符合条件</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;组合条件</span><br><span class="line">        -a    &#x2F;&#x2F;并且</span><br><span class="line">        -o    &#x2F;&#x2F;and</span><br><span class="line">        -not    &#x2F;&#x2F;取反</span><br><span class="line">        ！    &#x2F;&#x2F;与not效果相同</span><br><span class="line">    例子：</span><br><span class="line">        !A -a !B &#x3D; !(A -o B)</span><br><span class="line">        !A -o !B &#x3D; !(A -o B)</span><br><span class="line">        </span><br><span class="line">    &#x2F;&#x2F;动作处理：默认为显示到屏幕上</span><br><span class="line">        -print    &#x2F;&#x2F;显示</span><br><span class="line">        -ls       &#x2F;&#x2F;类似ls -l的形式显示每一个文件的详细信息</span><br><span class="line">        -delete   &#x2F;&#x2F;删除查找到的文件</span><br><span class="line">        -fls &#x2F;path&#x2F;to？somefile    &#x2F;&#x2F;查找到的所有文件的长格式信息保存至指定文件中</span><br><span class="line">        -ok COMMAND&#123;&#125;\;      &#x2F;&#x2F;对查找的每个文件执行COMMAND，每次操作都要用户确认</span><br><span class="line">        -exec COMMAND&#123;&#125;\;    &#x2F;&#x2F;对查找的每个文件执行COMMAND，操作不需要确认</span><br><span class="line">        &#x2F;&#x2F;注意：find传递查找到的文件至后面指定的命令时，查找到所有\</span><br><span class="line">        &#x2F;&#x2F;符合条件的文件一次性传递给后面的命令，而有些命令不能接受过多参数，\</span><br><span class="line">        &#x2F;&#x2F;此时命令执行可能会失败。而xargs可规避此问题。</span><br><span class="line">        -xargs    &#x2F;&#x2F;通过管道将查找到的内容给xargs处理，xargs后面直接跟命令即可</span><br></pre></td></tr></table></figure>
 
 
       
@@ -443,8 +419,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Customize.github.io/2020/05/11/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89/" rel="next" title="Linux基础（四）">
-                <i class="fa fa-chevron-left"></i> Linux基础（四）
+              <a href="/Customize.github.io/2020/05/13/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%94%EF%BC%89/" rel="next" title="Linux基础（五）">
+                <i class="fa fa-chevron-left"></i> Linux基础（五）
               </a>
             
           </div>
@@ -453,8 +429,8 @@
     
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Customize.github.io/2020/05/29/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E5%85%AD%EF%BC%89/" rel="prev" title="Linux基础（六）">
-                Linux基础（六） <i class="fa fa-chevron-right"></i>
+              <a href="/Customize.github.io/2020/05/29/%E5%8E%8B%E7%BC%A9%E3%80%81%E8%A7%A3%E5%8E%8B%E7%BC%A9%E3%80%81%E7%AE%A1%E9%81%93%E7%AC%A6/" rel="prev" title="压缩、解压缩、管道符">
+                压缩、解压缩、管道符 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -627,7 +603,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本内容管理命令"><span class="nav-number">1.</span> <span class="nav-text">文本内容管理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-文本内容查看"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.文本内容查看</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本内容排序"><span class="nav-number">1.0.2.</span> <span class="nav-text">文本内容排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本内容统计"><span class="nav-number">1.0.3.</span> <span class="nav-text">文本内容统计</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本内容过滤"><span class="nav-number">1.0.4.</span> <span class="nav-text">文本内容过滤</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#文件查找命令"><span class="nav-number">1.</span> <span class="nav-text">文件查找命令</span></a></li></ol></div>
             
 
           </div>

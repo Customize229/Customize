@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="文本内容管理命令​">
+<meta name="description" content="用户和组管理用户：对于进入服务器之人的身份确认 组：对于多个用户进行管理，资源分配 123Authentication：认证Authorization：授权Accouting：审计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux基础（五）">
-<meta property="og:url" content="https://customize229.github.io/Customize.github.io/2020/05/13/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%94%EF%BC%89/index.html">
+<meta property="og:title" content="用户和组管理">
+<meta property="og:url" content="https://customize229.github.io/Customize.github.io/2020/05/29/%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E7%AE%A1%E7%90%86/index.html">
 <meta property="og:site_name" content="横川马鹿">
-<meta property="og:description" content="文本内容管理命令​">
-<meta property="article:published_time" content="2020-05-13T02:38:20.000Z">
-<meta property="article:modified_time" content="2020-05-28T16:45:45.308Z">
+<meta property="og:description" content="用户和组管理用户：对于进入服务器之人的身份确认 组：对于多个用户进行管理，资源分配 123Authentication：认证Authorization：授权Accouting：审计">
+<meta property="article:published_time" content="2020-05-29T03:02:41.000Z">
+<meta property="article:modified_time" content="2020-05-29T07:11:16.289Z">
 <meta property="article:author" content="WH">
 <meta property="article:tag" content="Linux基础">
 <meta name="twitter:card" content="summary">
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="https://Customize229.github.io/Customize.github.io/2020/05/13/Linux基础（五）/"/>
+  <link rel="canonical" href="https://Customize229.github.io/Customize.github.io/2020/05/29/用户和组管理/"/>
 
 
 
@@ -140,7 +140,7 @@
     }
 </style>
 
-  <title>Linux基础（五） | 横川马鹿</title>
+  <title>用户和组管理 | 横川马鹿</title>
   
 
 
@@ -278,7 +278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://Customize229.github.io/Customize.github.io/Customize.github.io/2020/05/13/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E4%BA%94%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="https://Customize229.github.io/Customize.github.io/Customize.github.io/2020/05/29/%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E7%AE%A1%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WH">
@@ -295,7 +295,7 @@
     
         
         
-          <h1 class="post-title" itemprop="name headline">Linux基础（五）</h1>
+          <h1 class="post-title" itemprop="name headline">用户和组管理</h1>
         
     
         <div class="post-meta">
@@ -307,8 +307,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-13T10:38:20+08:00">
-                2020-05-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-29T11:02:41+08:00">
+                2020-05-29
               </time>
             
     
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k
+                  361
                 </span>
               
     
@@ -386,34 +386,69 @@
       
     
       
-        <h3 id="文本内容管理命令"><a href="#文本内容管理命令" class="headerlink" title="文本内容管理命令"></a>文本内容管理命令</h3><p>​    <a id="more"></a></p>
-<h5 id="1-文本内容查看"><a href="#1-文本内容查看" class="headerlink" title="1.文本内容查看"></a>1.文本内容查看</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">cat    &#x2F;&#x2F;拼凑文件内容并输出至标准输出</span><br><span class="line"></span><br><span class="line">    -n    &#x2F;&#x2F;显示行号</span><br><span class="line"></span><br><span class="line">   注意：使用cat查看文件内容时会将文件的所有内容加载至内存，所以应避免使用cat打开巨大文件</span><br><span class="line"></span><br><span class="line">tac    &#x2F;&#x2F;连接文件并倒序打印内容至标准输出</span><br><span class="line"></span><br><span class="line">more   &#x2F;&#x2F;全屏查看文本文件内容，只能从前往后，不能从后往前</span><br><span class="line"></span><br><span class="line">       &#x2F;&#x2F;文件内容显示完毕后自动退出（回车显示下一行，空格显示下一页）</span><br><span class="line"></span><br><span class="line">less   &#x2F;&#x2F;全屏查看文本文件内容，可从前往后亦可从后往前。推荐使用 （回车回车显示下一行，空格显示下一页，按Q退出）</span><br><span class="line"></span><br><span class="line">head   &#x2F;&#x2F;查看文本文件头部内容，默认打印10行</span><br><span class="line"></span><br><span class="line">    -n    &#x2F;&#x2F;指定要打印的行数，-n 可以是15也可以是-15</span><br><span class="line"></span><br><span class="line">tail  &#x2F;&#x2F;查看文本文件尾部内容，同 head 默认打印10行</span><br><span class="line"></span><br><span class="line">    -n    &#x2F;&#x2F;指定要打印的行数，-n 可以是15也可以是-15</span><br></pre></td></tr></table></figure>
+        <h4 id="用户和组管理"><a href="#用户和组管理" class="headerlink" title="用户和组管理"></a>用户和组管理</h4><p>用户：对于进入服务器之人的身份确认</p>
+<p>组：对于多个用户进行管理，资源分配</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Authentication：认证</span><br><span class="line">Authorization：授权</span><br><span class="line">Accouting：审计</span><br></pre></td></tr></table></figure>
 
-<h5 id="文本内容排序"><a href="#文本内容排序" class="headerlink" title="文本内容排序"></a>文本内容排序</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">sort   &#x2F;&#x2F;默认升序排序，不是按数值大小排序（根据首字符）</span><br><span class="line"></span><br><span class="line">    -n    &#x2F;&#x2F;根据数值大小进行排序（可以配合 -r 使用）</span><br><span class="line"></span><br><span class="line">    -r    &#x2F;&#x2F;逆序排序</span><br><span class="line"></span><br><span class="line">    -t    &#x2F;&#x2F;字段分隔符</span><br><span class="line"></span><br><span class="line">    -k    &#x2F;&#x2F;以哪个字段为关键字进行排序</span><br><span class="line"></span><br><span class="line">    -u    &#x2F;&#x2F;去重，排序后相同的行只显示一次</span><br><span class="line"></span><br><span class="line">    -f     &#x2F;&#x2F;排序时忽略字符大小写</span><br><span class="line"></span><br><span class="line">uniq   &#x2F;&#x2F;报告重复的行（“连续”且完全相同方为重复）</span><br><span class="line"></span><br><span class="line">    -c    &#x2F;&#x2F;显示文件中重复的次数</span><br><span class="line"></span><br><span class="line">    -d    &#x2F;&#x2F;只显示重复的行（下面 2 q 与 2 123 中的2是指有两行重复）   </span><br><span class="line">    -u    &#x2F;&#x2F;只显示未重复的行</span><br></pre></td></tr></table></figure>
+ <a id="more"></a>
 
-<pre><code>[root@hcml wh]# uniq -c 让我康康 
-1 里面没有好康的
-2 q
-1 u
-1 wad
-1 adas234
-2 123</code></pre><h5 id="文本内容统计"><a href="#文本内容统计" class="headerlink" title="文本内容统计"></a>文本内容统计</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">wc(word count)</span><br><span class="line"></span><br><span class="line">    -c    &#x2F;&#x2F;显示字节数</span><br><span class="line"></span><br><span class="line">    -l     &#x2F;&#x2F;显示行数</span><br><span class="line"></span><br><span class="line">    -w    &#x2F;&#x2F;显示单词数</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;大小统计</span><br><span class="line"></span><br><span class="line">du    &#x2F;&#x2F;查看文件或目录占用的磁盘空间大小</span><br><span class="line"></span><br><span class="line">    -h    &#x2F;&#x2F;以人类友好（看得懂）的方式显示大小</span><br><span class="line"></span><br><span class="line">    -s    &#x2F;&#x2F;显示总的占用空间大小</span><br><span class="line"></span><br><span class="line">df    &#x2F;&#x2F;报告文件系统磁盘空间使用情况（要带目标磁盘）</span><br><span class="line"></span><br><span class="line">    -h    &#x2F;&#x2F;以以人类友好（看得懂）的方式显示大小</span><br><span class="line"></span><br><span class="line">    -l     &#x2F;&#x2F;显示inode信息</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">lsblk    &#x2F;&#x2F;查看磁盘划分了多少个区块，给了谁使用</span><br></pre></td></tr></table></figure>
+<h5 id="用户分类"><a href="#用户分类" class="headerlink" title="用户分类"></a>用户分类</h5><p>Linux用户分为管理员和普通用户</p>
+<table>
+<thead>
+<tr>
+<th align="center">用户类别</th>
+<th align="center">用户ID</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">管理员</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">普通用户</td>
+<td align="center">1-65535</td>
+</tr>
+</tbody></table>
+<p>普通用户分为系统用户和登入用户</p>
+<table>
+<thead>
+<tr>
+<th align="center">用户类别</th>
+<th align="center">用户ID</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">系统用户</td>
+<td align="center">1-499（为了守护类进程获取系统资源而完成权限指派的用户）</td>
+</tr>
+<tr>
+<td align="center">登录用户</td>
+<td align="center">500-60000（为了完成交互式登录使用的用户，前500作为保留）</td>
+</tr>
+</tbody></table>
+<h5 id="Linux安全上下文"><a href="#Linux安全上下文" class="headerlink" title="Linux安全上下文"></a>Linux安全上下文</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">允许中的程序：进程（process）</span><br><span class="line">以进程发起者的身份运行</span><br><span class="line">root：cat</span><br><span class="line">tom：cat</span><br><span class="line">进程所能访问的所有资源的权限取决于进程的发起者的身份</span><br><span class="line">linux通过安全上下文的概念完成用户权限的指派</span><br><span class="line">先判断用户是否是某文件的属主</span><br><span class="line">再判断用户是否属于某个组</span><br><span class="line">最后定其为其它用户</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@hcml wh]# wc 让我康康 3  6 26 让我康康</span><br><span class="line">&#123;有3行、6个单词、占40个字节（占空格和换行符） 存在于让我康康文件中&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="文本内容过滤"><a href="#文本内容过滤" class="headerlink" title="文本内容过滤"></a>文本内容过滤</h5><p>cut    //截取文本内容（只能截取某一段）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cut OPTION...[FILE]...</span><br><span class="line">    -d    &#x2F;&#x2F;指定指端分隔符，默认是空格</span><br><span class="line">    -f    &#x2F;&#x2F;指定要显示的字段</span><br><span class="line">        -f 1,3  显示第一个字段和第三个字段</span><br><span class="line">        -f 1-3  显示第一个字段到第三个字段</span><br></pre></td></tr></table></figure>
-
-<p>awk    //基于列的文本报告工具</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-F&#39;&#39;    &#x2F;&#x2F;选择分隔符；分隔符用单引号引起来</span><br><span class="line">&#39;&#x2F;root&#x2F;&#39;    &#x2F;&#x2F;匹配关键字root的行</span><br><span class="line">&#39;&#123;print $#&#125;&#39;    &#x2F;&#x2F;选择打印第#列</span><br><span class="line">&#39;NR&#x3D;&#x3D;#&#123;print $#&#125;&#39;    &#x2F;&#x2F;选择打印第几行第几列</span><br></pre></td></tr></table></figure>
-
-<p>sed    //基于行的过滤和转换文本的流编辑器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  -i    &#x2F;&#x2F;修改文件内容</span><br><span class="line">  </span><br><span class="line">sed -i &#39;s&#x2F;原字符串&#x2F;新字符串&#x2F;&#39; file    &#x2F;&#x2F;新字符串替换原字符串，只替换每行第一个匹配到的字符</span><br><span class="line"></span><br><span class="line">sed -i &#39;s&#x2F;原字符串&#x2F;新字符串&#x2F;g&#39; file    &#x2F;&#x2F;新字符串替换原字符串，替换整行所有匹配到的字符串（全局替换）</span><br></pre></td></tr></table></figure>
-
-<p>grep、egrep、fgrep    //文本内容查找</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">grep    &#x2F;&#x2F;根据模式搜索文本内容，并将复核模式的内容行显示出来</span><br><span class="line">        &#x2F;&#x2F;使用基本正则表达式定义的模式来过滤文本的命令</span><br><span class="line">        </span><br><span class="line">    pattern（模式）    &#x2F;&#x2F;文本字符和正则表达式的元字符组合而成的匹配条件</span><br><span class="line">        -i    &#x2F;&#x2F;忽略大小写</span><br><span class="line">        --color    &#x2F;&#x2F;匹配到的内容高亮显示（默认添加）</span><br><span class="line">        -v    &#x2F;&#x2F;显示没有被模式匹配到的行（取反）</span><br><span class="line">        -o    &#x2F;&#x2F;显示被模式匹配到的字符串</span><br><span class="line">        -E    &#x2F;&#x2F;使用扩展正则表达式;grep -E相当于使用egrep</span><br><span class="line">        -q    &#x2F;&#x2F;静默模式，不输出任何信息</span><br><span class="line">        -A 1    &#x2F;&#x2F;被模式匹配到的内容以及其后面一行的内容都显示出来</span><br><span class="line">                &#x2F;&#x2F;如果把1改成2就表示被模式匹配到的内容以及其后面两行的内容均显示出来</span><br><span class="line">        -B 1    &#x2F;&#x2F;被模式匹配到的内容以及其前面一行的内容都显示出来</span><br><span class="line">                &#x2F;&#x2F;如果把1改成2就表示被模式匹配到的内容以及其后面两行的内容均显示出来</span><br><span class="line">        -C 1    &#x2F;&#x2F;被模式匹配到的内容以及其前后各一行的内容都显示出来</span><br><span class="line">                &#x2F;&#x2F;如果把1改成2就表示被模式匹配到的内容以及其前后两行的内容均显示寄出来</span><br><span class="line">        </span><br><span class="line">fgrep    &#x2F;&#x2F;不支持正则表达式，执行速度快</span><br></pre></td></tr></table></figure>
-
-
+<h5 id="Linux用户组类别"><a href="#Linux用户组类别" class="headerlink" title="Linux用户组类别"></a>Linux用户组类别</h5><table>
+<thead>
+<tr>
+<th align="center">用户组类别</th>
+<th align="center">特性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">私有组</td>
+<td align="center">创建用户时，如果没有为其指定所属的组，系统会自动为其创建一个与用户名相同的组</td>
+</tr>
+<tr>
+<td align="center">基本组</td>
+<td align="center">用户的默认组</td>
+</tr>
+<tr>
+<td align="center">附加组（额外组）</td>
+<td align="center">默认组以外的其它组</td>
+</tr>
+</tbody></table>
+<h4 id="Linux用户的组相关的配置文件"><a href="#Linux用户的组相关的配置文件" class="headerlink" title="Linux用户的组相关的配置文件"></a>Linux用户的组相关的配置文件</h4><h5 id="各配置文件说明"><a href="#各配置文件说明" class="headerlink" title="各配置文件说明"></a>各配置文件说明</h5>
       
     </div>
     
@@ -443,8 +478,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Customize.github.io/2020/05/11/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E5%9B%9B%EF%BC%89/" rel="next" title="Linux基础（四）">
-                <i class="fa fa-chevron-left"></i> Linux基础（四）
+              <a href="/Customize.github.io/2020/05/29/%E5%8E%8B%E7%BC%A9%E3%80%81%E8%A7%A3%E5%8E%8B%E7%BC%A9%E3%80%81%E7%AE%A1%E9%81%93%E7%AC%A6/" rel="next" title="压缩、解压缩、管道符">
+                <i class="fa fa-chevron-left"></i> 压缩、解压缩、管道符
               </a>
             
           </div>
@@ -452,10 +487,6 @@
           <span class="post-nav-divider"></span>
     
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Customize.github.io/2020/05/29/Linux%E5%9F%BA%E7%A1%80%EF%BC%88%E5%85%AD%EF%BC%89/" rel="prev" title="Linux基础（六）">
-                Linux基础（六） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -627,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本内容管理命令"><span class="nav-number">1.</span> <span class="nav-text">文本内容管理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-文本内容查看"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.文本内容查看</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本内容排序"><span class="nav-number">1.0.2.</span> <span class="nav-text">文本内容排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本内容统计"><span class="nav-number">1.0.3.</span> <span class="nav-text">文本内容统计</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本内容过滤"><span class="nav-number">1.0.4.</span> <span class="nav-text">文本内容过滤</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户和组管理"><span class="nav-number">1.</span> <span class="nav-text">用户和组管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用户分类"><span class="nav-number">1.1.</span> <span class="nav-text">用户分类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux安全上下文"><span class="nav-number">1.2.</span> <span class="nav-text">Linux安全上下文</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux用户组类别"><span class="nav-number">1.3.</span> <span class="nav-text">Linux用户组类别</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux用户的组相关的配置文件"><span class="nav-number">2.</span> <span class="nav-text">Linux用户的组相关的配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#各配置文件说明"><span class="nav-number">2.1.</span> <span class="nav-text">各配置文件说明</span></a></li></ol></li></ol></div>
             
 
           </div>
