@@ -86,9 +86,9 @@
 <meta property="og:site_name" content="横川马鹿">
 <meta property="og:description" content="OSPFospf是由IETF(Internet Engineering Task Force,Internet 工程任务组)开发的基于链路状态(Link State)的自治系统内部路由协议，用来替代存在一些问题的Rip协议。">
 <meta property="og:image" content="https://customize229.github.io/Customize.github.io/2020/06/02/OSPF/ospf.jpg">
-<meta property="og:image" content="https://customize229.github.io/Customize.github.io/2020/06/02/OSPF/%E7%8A%B6%E6%80%81.jpg">
+<meta property="og:image" content="https://customize229.github.io/Customize.github.io/2020/06/02/OSPF/zt.jpg">
 <meta property="article:published_time" content="2020-06-02T02:07:24.000Z">
-<meta property="article:modified_time" content="2020-06-02T05:32:45.431Z">
+<meta property="article:modified_time" content="2020-06-02T06:25:33.111Z">
 <meta property="article:author" content="WH">
 <meta property="article:tag" content="计网基础">
 <meta name="twitter:card" content="summary">
@@ -402,7 +402,7 @@
 <p><strong><img src="/Customize.github.io/2020/06/02/OSPF/ospf.jpg" class title="OSPF协议工作过程"></strong></p>
 <h4 id="ospf的五种报文"><a href="#ospf的五种报文" class="headerlink" title="ospf的五种报文"></a>ospf的五种报文</h4><p>Hello报文：建立并维护邻居关系</p>
 <p>DBD报文：发送链路状态头部信息</p>
-<p>LSR报文：把从DBD中需要</p>
+<p>LSR报文：把从DBD中需要的链路状态头部信息传给邻居，请求完整信息</p>
 <p>LSU报文：将LSR请求的头部信息对应的完整信息发给邻居</p>
 <p>LSACK报文：收到LSU报文后确认该报文</p>
 <h4 id="ospf的八种邻居状态"><a href="#ospf的八种邻居状态" class="headerlink" title="ospf的八种邻居状态"></a>ospf的八种邻居状态</h4><h5 id="Down"><a href="#Down" class="headerlink" title="Down"></a>Down</h5><p>这是第一个OSPF邻居状态，在这个状态下路由器没有从邻居那收到任何信息（包括hello包），不过在这个状态下，路由器可以主动发出hello包给自己的邻居</p>
@@ -414,11 +414,11 @@
 <p>注意：在init状态下接受到邻居发来的DBD包也会导致路由器转变成2-Way状态</p>
 <h5 id="Exstart"><a href="#Exstart" class="headerlink" title="Exstart"></a>Exstart</h5><p>一旦DR和BDR选举出来，真正的链路状态信息交换才会发生在路由器和DR，BDR之间</p>
 <p>在Exstart状态下，路由器和它的DR，BDR建立了一种master-slave的关系并且选择一个初始的sequence number来形成邻接。拥有更高的Router ID的路由器将会成为master并且开始交换信息，同时master也是唯一一个可以增加sequence number的路由器。需要注意的是，逻辑上可以认为DR/BDR中拥有更高的Router ID的一个可以成为master。但是请记住，DR/BDR的选举可能会因为手工配置了priority而不一样，不仅仅依赖与Router ID。因此有可能DR会在这个状态下充当slave状态</p>
-<h5 id="Exchange"><a href="#Exchange" class="headerlink" title="Exchange"></a>Exchange</h5><p>在Exchange状态下，ospf路由器交换DBD包。DBD包含了LSA的头部文件，并且描述了整个链路状态数据库的内容。每一个DBD报文都含有一个sequence number，并且这个号码会每一次被master增加。在Exchange状态下，路由器同时会发送链路状态请求报文(LSR)和莲路状态更新报文(LSU)。接收到的DBD报文会和路由器链路状态数据库进行比较以确保是否有任何新的或者更多的链路状态信息是可用的</p>
+<h5 id="Exchange"><a href="#Exchange" class="headerlink" title="Exchange"></a>Exchange</h5><p>在Exchange状态下，ospf路由器交换DBD包。DBD包含了LSA的头部文件，并且描述了整个链路状态数据库的内容。每一个DBD报文都含有一个sequence number，并且这个号码会每一次被master增加。在Exchange状态下，路由器同时会发送链路状态请求报文(LSR)和链路状态更新报文(LSU)。接收到的DBD报文会和路由器链路状态数据库进行比较以确保是否有任何新的或者更多的链路状态信息是可用的</p>
 <h5 id="Loading"><a href="#Loading" class="headerlink" title="Loading"></a>Loading</h5><p>在Loading状态下，发生的是真正的链路状态信息交换。基于DBD报文所提供的信息，路由器会发送链路状态请求报文。邻居会在链路状态更新报文中提供相应的链路状态信息。在邻接关系下，如果一个路由器收到了一个过期或者丢失了LSA，它会发送一个LSR请求相应的LSA。所有链路状态更新数据包都会在这个状态下达到同步</p>
 <h5 id="Full"><a href="#Full" class="headerlink" title="Full"></a>Full</h5><p>在Full状态下，路由器和其邻居会达到完全邻接状态。所有路由器和网络LSA都会交换并且路由器数据库达到同步。</p>
 <p>Full状态是ospf路由器的一个最常见的状态。如果一个路由器停留在另一个状态，那么就说明了在路由器建立邻接关系的过程中是存在问题的。唯一的例外是2-Way状态，是在广播网络中常见的。在广播网络中，邻居之间（除了DR,BDR之外）会最终处于2-Way状态</p>
-<p><strong><img src="/Customize.github.io/2020/06/02/OSPF/%E7%8A%B6%E6%80%81.jpg" class title="OSPF状态关系表"></strong></p>
+<p><strong><img src="/Customize.github.io/2020/06/02/OSPF/zt.jpg" class title="OSPF状态关系表"></strong></p>
 
       
     </div>
