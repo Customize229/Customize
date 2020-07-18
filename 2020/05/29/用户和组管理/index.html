@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="横川马鹿">
 <meta property="og:description" content="用户和组管理用户：对于进入服务器之人的身份确认 组：对于多个用户进行管理，资源分配 123Authentication：认证Authorization：授权Accouting：审计">
 <meta property="article:published_time" content="2020-05-29T03:02:41.000Z">
-<meta property="article:modified_time" content="2020-07-07T09:14:31.130Z">
+<meta property="article:modified_time" content="2020-07-13T14:53:30.127Z">
 <meta property="article:author" content="WH">
 <meta property="article:tag" content="Linux基础">
 <meta name="twitter:card" content="summary">
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k
+                  1.8k
                 </span>
               
     
@@ -487,6 +487,9 @@
 
 <h5 id="用户创建命令"><a href="#用户创建命令" class="headerlink" title="用户创建命令"></a>用户创建命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;语法：useradd [option] USERNAME</span><br><span class="line">-u UID    &#x2F;&#x2F;[UID_MIN,UID_MAX]定义在&#x2F;etc&#x2F;login.defs文件中</span><br><span class="line">-g GID    &#x2F;&#x2F;指定用户所属基本组，可为组名或GID</span><br><span class="line">-G groupname,...    &#x2F;&#x2F;附加组，可以有多个，用逗号隔开。组groupname必须事先存在</span><br><span class="line">-c &quot;COMMENT&quot;        &#x2F;&#x2F;注释信息</span><br><span class="line">-d &#x2F;path&#x2F;to&#x2F;directory    &#x2F;&#x2F;指定用户的家目录。此目录不能事先存在</span><br><span class="line">                         &#x2F;&#x2F;否则将不会从&#x2F;etc&#x2F;skel中复制环境设置文件</span><br><span class="line">-s shell    &#x2F;&#x2F;这里的shell最好使用&#x2F;etc&#x2F;shells里面有的shell</span><br><span class="line">            &#x2F;&#x2F;&#x2F;etc&#x2F;shells指定了当前系统可用的安全shell</span><br><span class="line">-M          &#x2F;&#x2F;创建用户时不给其创建家目录</span><br><span class="line">-r          &#x2F;&#x2F;添加一个系统用户</span><br><span class="line">-D          &#x2F;&#x2F;直接打印&#x2F;etc&#x2F;default&#x2F;useradd文件的内容或配合其他选项</span><br><span class="line">            &#x2F;&#x2F;（例如-s shell）直接修改&#x2F;etc&#x2F;default&#x2F;useradd文件中的默认值</span><br></pre></td></tr></table></figure>
 
+<p>wh:!!</p>
+<p>一个感叹号表示用户处于锁定状态不可登录（*号作用相同）</p>
+<p>两个感叹号表示为设置密码也不可登陆</p>
 
       
     </div>
@@ -610,7 +613,7 @@
               
                 <a href="/Customize.github.io/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -621,7 +624,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/Customize.github.io/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -632,7 +635,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/Customize.github.io/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
