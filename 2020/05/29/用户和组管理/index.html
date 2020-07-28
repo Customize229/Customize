@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="横川马鹿">
 <meta property="og:description" content="用户和组管理用户：对于进入服务器之人的身份确认 组：对于多个用户进行管理，资源分配 123Authentication：认证Authorization：授权Accouting：审计">
 <meta property="article:published_time" content="2020-05-29T03:02:41.000Z">
-<meta property="article:modified_time" content="2020-07-13T14:53:30.127Z">
+<meta property="article:modified_time" content="2020-07-28T02:52:00.288Z">
 <meta property="article:author" content="WH">
 <meta property="article:tag" content="Linux基础">
 <meta name="twitter:card" content="summary">
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.8k
+                  2.7k
                 </span>
               
     
@@ -487,9 +487,91 @@
 
 <h5 id="用户创建命令"><a href="#用户创建命令" class="headerlink" title="用户创建命令"></a>用户创建命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;语法：useradd [option] USERNAME</span><br><span class="line">-u UID    &#x2F;&#x2F;[UID_MIN,UID_MAX]定义在&#x2F;etc&#x2F;login.defs文件中</span><br><span class="line">-g GID    &#x2F;&#x2F;指定用户所属基本组，可为组名或GID</span><br><span class="line">-G groupname,...    &#x2F;&#x2F;附加组，可以有多个，用逗号隔开。组groupname必须事先存在</span><br><span class="line">-c &quot;COMMENT&quot;        &#x2F;&#x2F;注释信息</span><br><span class="line">-d &#x2F;path&#x2F;to&#x2F;directory    &#x2F;&#x2F;指定用户的家目录。此目录不能事先存在</span><br><span class="line">                         &#x2F;&#x2F;否则将不会从&#x2F;etc&#x2F;skel中复制环境设置文件</span><br><span class="line">-s shell    &#x2F;&#x2F;这里的shell最好使用&#x2F;etc&#x2F;shells里面有的shell</span><br><span class="line">            &#x2F;&#x2F;&#x2F;etc&#x2F;shells指定了当前系统可用的安全shell</span><br><span class="line">-M          &#x2F;&#x2F;创建用户时不给其创建家目录</span><br><span class="line">-r          &#x2F;&#x2F;添加一个系统用户</span><br><span class="line">-D          &#x2F;&#x2F;直接打印&#x2F;etc&#x2F;default&#x2F;useradd文件的内容或配合其他选项</span><br><span class="line">            &#x2F;&#x2F;（例如-s shell）直接修改&#x2F;etc&#x2F;default&#x2F;useradd文件中的默认值</span><br></pre></td></tr></table></figure>
 
+<p>chroy：时间同步协议</p>
+<p>sshd：xshell程序用户</p>
+<h5 id="用户删除命令"><a href="#用户删除命令" class="headerlink" title="用户删除命令"></a>用户删除命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;语法：userdel [option] USERNAME</span><br><span class="line">-r	&#x2F;&#x2F;删除用户的同时删除家目录（userdel默认不会删除其家目录）</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看用户账户的信息命令"><a href="#查看用户账户的信息命令" class="headerlink" title="查看用户账户的信息命令"></a>查看用户账户的信息命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">id    &#x2F;&#x2F;查看用户的账号属性信息</span><br><span class="line">-u    &#x2F;&#x2F;查看UID</span><br><span class="line">-g    &#x2F;&#x2F;查看GID</span><br><span class="line">-G    &#x2F;&#x2F;查看Group（附加组id）</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改用户账号属性的命令"><a href="#修改用户账号属性的命令" class="headerlink" title="修改用户账号属性的命令"></a>修改用户账号属性的命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;usermod  修改用户属性</span><br><span class="line">&#x2F;&#x2F;语法：usermod [options] username</span><br><span class="line">-u UID</span><br><span class="line">-g GID</span><br><span class="line">-a -G groupname  &#x2F;&#x2F;不适用-a选项，会覆盖此前的附加组</span><br><span class="line">-d -m            &#x2F;&#x2F;改变用户家目录的同时会把原来家目录的文件移动到新的家目录中（需要直接指定）</span><br><span class="line">-e YYYY-MM-DD    &#x2F;&#x2F;指明用户账号过期日期</span><br><span class="line">-f INACTIVE      &#x2F;&#x2F;设定非活动期限</span><br><span class="line">-L               &#x2F;&#x2F;锁定账号</span><br><span class="line">                 &#x2F;&#x2F;被锁定的账号在&#x2F;etc&#x2F;shadow文件中密码前面会有一个！感叹号</span><br><span class="line">-U               &#x2F;&#x2F;解锁账号</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;chsh  修改用户的默认shell</span><br><span class="line">&#x2F;&#x2F;语法：chsh [options] [username]</span><br><span class="line">-s SHELL</span><br></pre></td></tr></table></figure>
+
+<h5 id="切换用户命令su"><a href="#切换用户命令su" class="headerlink" title="切换用户命令su"></a>切换用户命令su</h5><table>
+<thead>
+<tr>
+<th align="center">切换用户的方式</th>
+<th align="center">特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">su USERNAME</td>
+<td align="center">非登陆式且切换，即不会读取目标用户的配置文件</td>
+</tr>
+<tr>
+<td align="center">su - USERNAME</td>
+<td align="center">登录式切换，即会读取目标用户的配置文件。完全切换</td>
+</tr>
+<tr>
+<td align="center">su -</td>
+<td align="center">不指定用户时默认切换至root用户</td>
+</tr>
+</tbody></table>
+<p>root su切换至其他用户不需要密码，非root用户su至其他用户时需要输入目标密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;语法：su [options] [-] [USER[arg]...]</span><br><span class="line">-c &#39;COMMAND&#39;    &#x2F;&#x2F;切换身份执行命令，命令执行结束后又回到原来的身份</span><br></pre></td></tr></table></figure>
+
+<h5 id="bash的配置文件"><a href="#bash的配置文件" class="headerlink" title="bash的配置文件"></a>bash的配置文件</h5><table>
+<thead>
+<tr>
+<th align="center">配置文件类型</th>
+<th align="center">配置文件路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">全局配置</td>
+<td align="center">/etc/profile /etc/profile.d/*.sh /etc/bashrc</td>
+</tr>
+<tr>
+<td align="center">个人配置</td>
+<td align="center"><del>/bash_profile</del>/.bashrc</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">配置文件类型</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">profile类</td>
+<td align="center">为交互式登录的shell提供配置，用来设定环境变量、运行命令或脚本</td>
+</tr>
+<tr>
+<td align="center">bashrc类</td>
+<td align="center">为非交互式登录的shell提供配置，用来设定本地变量、定义命令别名</td>
+</tr>
+</tbody></table>
+<p>登录式shell如何读取配置文件？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;profile- &gt; &#x2F;etc&#x2F;profile.d&#x2F;*.sh- &gt;~&#x2F;.bash_profile- &gt;~&#x2F;.bashrc- &gt;&#x2F;etc&#x2F;bashrc</span><br></pre></td></tr></table></figure>
+
+<p>非登录式shell如何读取配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;.bashrc- &gt;&#x2F;etc&#x2F;bashrc- &gt;&#x2F;etc&#x2F;profile.d&#x2F;*.sh</span><br></pre></td></tr></table></figure>
+
+<h5 id="密码管理命令passwd"><a href="#密码管理命令passwd" class="headerlink" title="密码管理命令passwd"></a>密码管理命令passwd</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">语法：passwd [options] [USERNAME]</span><br><span class="line">--stdin    &#x2F;&#x2F;从标准输入获取用户密码,&#x2F;</span><br><span class="line">           &#x2F;&#x2F;例：echo&quot;redhat&quot;|passwd --stdin user1</span><br><span class="line">-l  &#x2F;&#x2F;锁定用户</span><br><span class="line">-u  &#x2F;&#x2F;解锁用户</span><br><span class="line">-d  &#x2F;&#x2F;删除用户密码</span><br><span class="line">-n  mindays    &#x2F;&#x2F;指定最短使用期限</span><br><span class="line">-x  maxdays    &#x2F;&#x2F;指定最长使用期限</span><br><span class="line">-w  warndays   &#x2F;&#x2F;提前多少天开始警告</span><br><span class="line">-i  inactivedays  &#x2F;&#x2F;非活动期限，密码过期后到禁用前这段时间</span><br></pre></td></tr></table></figure>
+
+
+
 <p>wh:!!</p>
 <p>一个感叹号表示用户处于锁定状态不可登录（*号作用相同）</p>
 <p>两个感叹号表示为设置密码也不可登陆</p>
+<p>一个用户只能有一个基本组，但可以拥有多个附加组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@wh ~]# useradd -M user4</span><br><span class="line">[root@wh ~]# tail -1 &#x2F;etc&#x2F;passwd</span><br><span class="line">user4:x1004:1004::&#x2F;home&#x2F;user4:&#x2F;bin&#x2F;bash</span><br><span class="line">（-M不创建家目录，配置文件会填写家目录的默认位置，但是并不会去创建这个目录）</span><br></pre></td></tr></table></figure>
+
+<h5 id="账号限制文件"><a href="#账号限制文件" class="headerlink" title="账号限制文件"></a>账号限制文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;login.defs</span><br><span class="line">	pass_max_days 99999  &#x2F;&#x2F;密码有效期(5)</span><br><span class="line">	pass_min_days 0  &#x2F;&#x2F;密码修改间隔(4)</span><br><span class="line">	pass_min_len 5  &#x2F;&#x2F;密码最小5位(PAM)</span><br><span class="line">	pass_warn_age 7  &#x2F;&#x2F;密码到期警告(6)</span><br><span class="line">	uid_min 500  </span><br><span class="line">	gid_max 60000  &#x2F;&#x2F;最小和最大UID范围</span><br><span class="line">	encrypt_method sha512  &#x2F;&#x2F;加密模式</span><br></pre></td></tr></table></figure>
+
+<h5 id="用户默认值文件"><a href="#用户默认值文件" class="headerlink" title="用户默认值文件"></a>用户默认值文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;default&#x2F;useradd</span><br><span class="line">	group&#x3D;100  &#x2F;&#x2F;用户默认组</span><br><span class="line">	home&#x3D;&#x2F;home  &#x2F;&#x2F;用户家目录</span><br><span class="line">	inactive&#x3D;-1  &#x2F;&#x2F;密码过期宽限天数（shadow 文件7字段）</span><br><span class="line">	expire&#x3D;  &#x2F;&#x2F;密码失效时间</span><br><span class="line">	shell&#x3D;&#x2F;bin&#x2F;bash  &#x2F;&#x2F;默认shell</span><br><span class="line">	skel&#x3D;&#x2F;etc&#x2F;skel  &#x2F;&#x2F;模板目录</span><br><span class="line">	create_mail_spool&#x3D;yes  &#x2F;&#x2F;是否建立邮箱</span><br></pre></td></tr></table></figure>
+
+
+
 
       
     </div>
@@ -704,7 +786,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户和组管理"><span class="nav-number">1.</span> <span class="nav-text">用户和组管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用户分类"><span class="nav-number">1.1.</span> <span class="nav-text">用户分类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux安全上下文"><span class="nav-number">1.2.</span> <span class="nav-text">Linux安全上下文</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux用户组类别"><span class="nav-number">1.3.</span> <span class="nav-text">Linux用户组类别</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux用户的组相关的配置文件"><span class="nav-number">2.</span> <span class="nav-text">Linux用户的组相关的配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#各配置文件说明"><span class="nav-number">2.1.</span> <span class="nav-text">各配置文件说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#加密方式"><span class="nav-number">2.2.</span> <span class="nav-text">加密方式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#密码管理"><span class="nav-number">3.</span> <span class="nav-text">密码管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#命令"><span class="nav-number">3.1.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#改变用户密码过期信息命令"><span class="nav-number">3.2.</span> <span class="nav-text">改变用户密码过期信息命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#密码生成工具"><span class="nav-number">3.3.</span> <span class="nav-text">密码生成工具</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux用户密码加密方式"><span class="nav-number">3.4.</span> <span class="nav-text">Linux用户密码加密方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用户创建命令"><span class="nav-number">3.5.</span> <span class="nav-text">用户创建命令</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户和组管理"><span class="nav-number">1.</span> <span class="nav-text">用户和组管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#用户分类"><span class="nav-number">1.1.</span> <span class="nav-text">用户分类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux安全上下文"><span class="nav-number">1.2.</span> <span class="nav-text">Linux安全上下文</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux用户组类别"><span class="nav-number">1.3.</span> <span class="nav-text">Linux用户组类别</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux用户的组相关的配置文件"><span class="nav-number">2.</span> <span class="nav-text">Linux用户的组相关的配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#各配置文件说明"><span class="nav-number">2.1.</span> <span class="nav-text">各配置文件说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#加密方式"><span class="nav-number">2.2.</span> <span class="nav-text">加密方式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#密码管理"><span class="nav-number">3.</span> <span class="nav-text">密码管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#命令"><span class="nav-number">3.1.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#改变用户密码过期信息命令"><span class="nav-number">3.2.</span> <span class="nav-text">改变用户密码过期信息命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#密码生成工具"><span class="nav-number">3.3.</span> <span class="nav-text">密码生成工具</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux用户密码加密方式"><span class="nav-number">3.4.</span> <span class="nav-text">Linux用户密码加密方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用户创建命令"><span class="nav-number">3.5.</span> <span class="nav-text">用户创建命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用户删除命令"><span class="nav-number">3.6.</span> <span class="nav-text">用户删除命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查看用户账户的信息命令"><span class="nav-number">3.7.</span> <span class="nav-text">查看用户账户的信息命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改用户账号属性的命令"><span class="nav-number">3.8.</span> <span class="nav-text">修改用户账号属性的命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#切换用户命令su"><span class="nav-number">3.9.</span> <span class="nav-text">切换用户命令su</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bash的配置文件"><span class="nav-number">3.10.</span> <span class="nav-text">bash的配置文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#密码管理命令passwd"><span class="nav-number">3.11.</span> <span class="nav-text">密码管理命令passwd</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#账号限制文件"><span class="nav-number">3.12.</span> <span class="nav-text">账号限制文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用户默认值文件"><span class="nav-number">3.13.</span> <span class="nav-text">用户默认值文件</span></a></li></ol></li></ol></div>
             
 
           </div>
